@@ -24,7 +24,7 @@ export class NoteComponent implements OnInit {
   }
 
   remove(){
-    this.onRemoveEvent.emit(this.note.id)
+    this.onRemoveEvent.emit(this.note.id);
   }
 
   setSelected(){
@@ -32,10 +32,10 @@ export class NoteComponent implements OnInit {
   }
 
   getTagNameFromNote(){
-    for (let tag of this.tagsArray)
-    if (tag.id == this.note.tagId){
-      this.tagName = tag.description;
+    for (let tag of this.tagsArray){
+      if (tag.id == this.note.tagId){
+        this.tagName = tag.description;
+      }
     }
   }
-
 }

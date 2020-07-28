@@ -7,6 +7,7 @@
             <p>{{ note.description }}</p>
             <p><label style="border: solid blue 2px; border-radius: 6px; background-color: darkblue; color: white; padding: 4px;">{{ tagName }}</label></p>
         </div>
-    <button class="remove-button" (click)="remove()">REMOVE</button>
-
+    <button class="btn" (click)="remove()">REMOVE</button>
+    <!-- [ngStyle]="'background-color', tag.color" -->
+<!-- DA FARE L'NG STYLE: CREARE COMPONENT TAG, METTERE NEL TODO CHE PRENDE TUTTO IL TAG E NON SOLO IL TAGID -->
 </div>

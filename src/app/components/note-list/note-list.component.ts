@@ -45,8 +45,8 @@ export class NoteListComponent implements OnInit {
     let elementTotal = this.notesArray.length;
     for (let i = 0; i < elementTotal; i++) {
       if (this.notesArray[i].selected) {
-        this.notesArray.splice(i, 1);
-        i--;
+        let idToRemove = this.notesArray[i].id;
+        this.onRemove(idToRemove)
       }
     }
   }
@@ -66,17 +66,21 @@ export class NoteListComponent implements OnInit {
     let resp = this.tagService.getAllTags();
     resp.subscribe((dati) => {
       let tags = dati as Tag[];
-      console.log("tag che piglio dal db: " + tags)
+      console.log("tag che piglio dal db: " + tags);
       for (let tag of tags){
         this.tagsArray.push(tag)
       }
     })
   }
 
-  onRemove(id){
-    console.log("id che cerco di rimuovere: "+ id)
-    this.todoServices.deleteTodo(id)
-    this.getTodosFromDb();
+  onRemove(id: number){
+    console.log("id che cerco di rimuovere: " + id);
+    let resp = this.todoServices.deleteTodo(id);
+    resp.subscribe((data) => {
+      console.log("per favore ti prego vai")
+      this.getTodosFromDb();
+    })
+    
   }
 
 }

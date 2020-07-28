@@ -4,7 +4,6 @@ import { JwtUtils } from '../utils/jwt.utils';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Note } from '../model/Note';
-import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -42,10 +41,12 @@ export class TodoService {
   deleteTodo(id: number) {
     let token = this.jwtUtils.getUserToken();
     let options = {
-      headers: new HttpHeaders().set('auth-token', token),
+      headers: new HttpHeaders()
+      .set('auth-token', token)
+      .set("content-type", "application/json"),
     };
     let resp = this.http.delete(this.BASE_URL + "/todo/" + id + "/delete", options);
-    console.log("URL DELETE [" + this.BASE_URL + "/todo/" + id + "/delete]");
+    // console.log("URL DELETE [" + this.BASE_URL + "/todo/" + id + "/delete]");
     return resp;
   }
 }
