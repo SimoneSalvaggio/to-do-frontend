@@ -1,0 +1,9 @@
+<h1>TO-DO LIST APP</h1>
+<div class="container">
+    <app-menu [tagsArray]="tagsArray" (addNoteEmitter)="addNote($event)" (removeSelectedEmit)="removeSelected($event)">
+    </app-menu>
+    <div style="margin-top: 10px;" class="container border border-primary" *ngFor="let note of notesArray">
+        <app-note [tagsArray]="tagsArray" [note]="note" (onRemoveEvent)="onRemove($event)">
+        </app-note>
+    </div>
+</div>

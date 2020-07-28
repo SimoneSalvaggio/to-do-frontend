@@ -1,0 +1,27 @@
+.nota{
+    border: solid, rgba(118, 231, 231, 0.39);
+    border-style: outset ;
+}
+
+.readyToRemove{
+    text-decoration: line-through;
+    background-color: rgba(226, 122, 122, 0.15);
+}
+
+.urgentClass{
+    background-color: rgba(109, 255, 80, 0.788);
+    text-decoration: solid;
+}
+
+.remove-button{
+    border-radius: 13px;
+    border: red solid 2px;
+    padding: 4px;
+    color: red;
+    background-color: white;
+}
+
+.remove-button:hover{
+    color: white;
+    background-color: red;
+}

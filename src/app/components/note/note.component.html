@@ -1,0 +1,12 @@
+<div [id]="note.id">
+    <div>TO-DO {{note.id}}</div>
+    <div class="form-check form-check-inline">
+        Seleziona nota: <input type="checkbox" (click)="setSelected()"> </div>
+        <div class="nota" [ngClass]="{'readyToRemove': note.selected, '': !note.selected}">
+            <p class="text-uppercase font-weight-bold">{{ note.title }}</p>
+            <p>{{ note.description }}</p>
+            <p><label style="border: solid blue 2px; border-radius: 6px; background-color: darkblue; color: white; padding: 4px;">{{ tagName }}</label></p>
+        </div>
+    <button class="remove-button" (click)="remove()">REMOVE</button>
+
+</div>

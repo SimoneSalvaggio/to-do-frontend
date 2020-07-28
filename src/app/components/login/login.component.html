@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="inputUsername" class="sr-only">Username</label>
+            <input class="form-control" id="inputPassword2" placeholder="Username" [(ngModel)]="username">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input class="form-control" type="password" id="inputPassword2" placeholder="Password" [(ngModel)]="password">
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="login()">
+                Login
+            </button>
+        </div>
+        <br>
+        <p *ngIf="loginFailed">
+            Username o password errati
+        </p>
+    </div>
+</div>
